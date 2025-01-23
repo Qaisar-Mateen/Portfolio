@@ -1,7 +1,7 @@
 {
   "name": "qaisar-mateen-portfolio",
-  "homepage": "https://Qaisar-Mateen.github.io/QaisarMateen/",
-  "version": "0.5.0",
+  "homepage": "https://Qaisar-Mateen.github.io/Portfolio/",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
