@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import Typewriter from "typewriter-effect";
+import Spline from '@splinetool/react-spline';
 
 const Hero = () => {
   return (
@@ -33,7 +34,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <ComputersCanvas />
+      {/* <ComputersCanvas /> */}
+      <Avatar />
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
@@ -57,3 +59,13 @@ const Hero = () => {
 };
 
 export default Hero;
+
+function Avatar() {
+  return (
+    <main>
+      <Spline
+        scene="https://prod.spline.design/rBdn0bzcfwYEE6d2/scene.splinecode" 
+      />
+    </main>
+  );
+}
