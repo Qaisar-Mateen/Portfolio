@@ -62,7 +62,7 @@ export default Hero;
 
 function Avatar() {
   return (
-    <main>
+    <main style={{"zIndex": 10}}>
       <Spline
         scene="https://prod.spline.design/rBdn0bzcfwYEE6d2/scene.splinecode" 
       />
