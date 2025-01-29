@@ -7,6 +7,8 @@ import Spline from '@splinetool/react-spline';
 
 const Hero = () => {
   return (
+    <>
+    
     <section className="relative w-full h-screen mx-auto">
       <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
         <div className="flex flex-col justify-center items-center mt-5">
@@ -55,6 +57,7 @@ const Hero = () => {
         </a>
       </div>
     </section>
+    </>
   );
 };
 
@@ -62,10 +65,10 @@ export default Hero;
 
 function Avatar() {
   return (
-    <main style={{"zIndex": 10}}>
+    <div style={{"zIndex": 10}}>
       <Spline
         scene="https://prod.spline.design/rBdn0bzcfwYEE6d2/scene.splinecode" 
       />
-    </main>
+    </div>
   );
 }
