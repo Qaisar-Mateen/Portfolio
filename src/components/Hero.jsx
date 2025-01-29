@@ -37,7 +37,7 @@ const Hero = () => {
       </div>
 
       {/* <ComputersCanvas /> */}
-      <Avatar />
+      <Particles />
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
@@ -63,12 +63,20 @@ const Hero = () => {
 
 export default Hero;
 
-function Avatar() {
+const isMobileDevice = () => {
+  return /Mobi|Android/i.test(navigator.userAgent);
+};
+
+function Particles() {
+  const sceneUrl = isMobileDevice()
+    ? "https://prod.spline.design/XXi-LdKqImqN5qeM/scene.splinecode"
+    : "https://prod.spline.design/rBdn0bzcfwYEE6d2/scene.splinecode";
   return (
     <div style={{"zIndex": 10}}>
       <Spline
-        scene="https://prod.spline.design/rBdn0bzcfwYEE6d2/scene.splinecode" 
+        scene={sceneUrl}
       />
+      {/* "https://prod.spline.design/XXi-LdKqImqN5qeM/scene.splinecode" */}
     </div>
   );
 }
