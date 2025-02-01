@@ -3,10 +3,34 @@ import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
+import "../genStyle.css";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+
+const ProjectCard1 = ({ name, description, tags, image, source_code_link }) => {
+  return (
+    <div class="card">
+      <div class="card2">
+        <div class="card__image">
+          <img src={image} alt="project_image" />
+        </div>
+        <div class="card__content">
+          <h3 class="card__title">{name}</h3>
+          <p class="card__text">{description}</p>
+        </div>
+        <div class="card__tags">
+          {tags.map((tag) => (
+            <p key={tag.name} class={`card__tag ${tag.color}`}>
+              #{tag.name}
+            </p>
+          ))}
+        </div>
+      </div>
+    </div> 
+  );
+};
 
 const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
   return (
@@ -66,7 +90,7 @@ const Works = () => {
       </div>
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} {...project} />
+          <ProjectCard1 key={`project-${index}`} {...project} />
         ))}
       </div>
     </>
