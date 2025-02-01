@@ -5,8 +5,9 @@ import "../genStyle.css";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import ProjectDetail from "./ProjectDetail"; // new import
 
-const ProjectCard = React.memo(({ name, description, tags, image, source_code_link }) => {
+const ProjectCard = React.memo(({ name, description, tags, image, source_code_link, showDetail }) => {
   return (
     <div className="card">
       <div className="card2">
@@ -23,7 +24,7 @@ const ProjectCard = React.memo(({ name, description, tags, image, source_code_li
           ))}
         </div>
         <div className="card__btns">
-          <button className="cssbuttons-io"><span>View Detail</span></button>
+          <button className="cssbuttons-io" onClick={showDetail}><span>View Detail</span></button>
           <button className="cssbuttons-io"  onClick={() => window.open(source_code_link, "_blank")}>
             <span>
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -42,6 +43,7 @@ const ProjectCard = React.memo(({ name, description, tags, image, source_code_li
 
 const Works = () => {
   const [visibleCount, setVisibleCount] = useState(3);
+  const [selectedProject, setSelectedProject] = useState(null); // new state
   const loadMoreRef = useRef(null);
 
   const loadMore = useCallback(() => {
@@ -82,11 +84,21 @@ const Works = () => {
       </div>
       <div className="mt-20 flex flex-wrap gap-10">
         {projects.slice(0, visibleCount).map((project, index) => (
-          <ProjectCard key={`project-${index}`} {...project} />
+          <ProjectCard 
+            key={`project-${index}`} 
+            {...project} 
+            showDetail={() => setSelectedProject(project)} // new prop
+          />
         ))}
       </div>
       
       <div ref={loadMoreRef} style={{ height: "1px" }} />
+      {selectedProject && (
+        <ProjectDetail 
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)} // callback to close the modal
+        />
+      )}
     </>
   );
 };
