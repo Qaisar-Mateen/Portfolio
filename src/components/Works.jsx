@@ -7,7 +7,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard1 = ({ name, description, tags, image, source_code_link }) => {
+const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
   return (
     <div className="card">
       <div className="card2">
@@ -57,7 +57,7 @@ const Works = () => {
       </div>
       <div className="mt-20 flex flex-wrap gap-10">
         {projects.map((project, index) => (
-          <ProjectCard1 key={`project-${index}`} {...project} />
+          <ProjectCard key={`project-${index}`} {...project} />
         ))}
       </div>
     </>
