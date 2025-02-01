@@ -1,8 +1,9 @@
-import React from "react";
+import React, { lazy, Suspense } from 'react';
+
+const Spline = lazy(() => import('@splinetool/react-spline'));
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import Typewriter from "typewriter-effect";
-import Spline from '@splinetool/react-spline';
 
 const isMobileDevice = () => {
   return /Mobi|Android/i.test(navigator.userAgent);
