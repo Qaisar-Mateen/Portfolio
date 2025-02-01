@@ -13,14 +13,12 @@ const ProjectCard1 = ({ name, description, tags, image, source_code_link }) => {
   return (
     <div class="card">
       <div class="card2">
-        <div class="card__image">
-          <img src={image} alt="project_image" />
-        </div>
+        <img class="card__image" src={image} alt="project_image" />
         <div class="card__content">
-          <h3 class="card__title">{name}</h3>
-          <p class="card__text">{description}</p>
+        <h3 className="title text-white font-bold text-[24px]">{name}</h3>
+        <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
-        <div class="card__tags">
+        <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <p key={tag.name} class={`card__tag ${tag.color}`}>
               #{tag.name}
@@ -88,7 +86,7 @@ const Works = () => {
           repositories in it.
         </motion.p>
       </div>
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 flex flex-wrap gap-10">
         {projects.map((project, index) => (
           <ProjectCard1 key={`project-${index}`} {...project} />
         ))}
