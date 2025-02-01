@@ -16,7 +16,9 @@ import {
   payloadmaster,
   threejs,
   mhft,
-  sketcher,
+  shortMaker1,
+  shortMaker2,
+  shortMakerVid,
   mathwork,
   CompileVortex,
   eduskill,
@@ -96,6 +98,7 @@ export const experiences = [
 export const projects = [
   {
     name: "ShortsMaker",
+    video: shortMakerVid,
     description:
       "Automate the creation of YouTube Shorts using AI, create a faceless short simply by providing a video topic to talk about and the AI will generate and even upload the video for you.",
     tags: [
@@ -104,7 +107,7 @@ export const projects = [
       { name: "AssemblyAI", color: "pink-text-gradient" },
       { name: "OpenAI", color: "green-text-gradient" },
     ],
-    image: weatherpedia,
+    image: [shortMaker1, shortMaker2],
     source_code_link: "https://github.com/Qaisar-Mateen/ShortsMaker",
   },
   {
@@ -117,7 +120,7 @@ export const projects = [
       { name: "bootstrap 5.3.0", color: "pink-text-gradient" },
       { name: "Weather API by API Ninjas", color: "green-text-gradient" },
     ],
-    image: weatherpedia,
+    image: [weatherpedia,],
     source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
   },
   {
@@ -129,7 +132,7 @@ export const projects = [
       { name: "css", color: "green-text-gradient" },
       { name: "Javascript", color: "pink-text-gradient" },
     ],
-    image: termpw,
+    image: [termpw,],
     source_code_link: "https://github.com/lohitkolluri/lohitkolluri.github.io",
   },
   {
@@ -141,7 +144,7 @@ export const projects = [
       { name: "Jupyter Notebook", color: "green-text-gradient" },
       { name: "Regression Algorithms", color: "pink-text-gradient" },
     ],
-    image: mhft,
+    image: [mhft,],
     source_code_link:
       "https://github.com/lohitkolluri/mental_health_fitness_tracker",
   },
@@ -152,7 +155,7 @@ export const projects = [
     tags: [
       { name: "shell", color: "blue-text-gradient" },
     ],
-    image: payloadmaster,
+    image: [payloadmaster,],
     source_code_link: "https://github.com/lohitkolluri/PayloadMaster",
   },
   {
@@ -164,7 +167,7 @@ export const projects = [
       { name: "CSS", color: "green-text-gradient" },
       { name: "HTML", color: "pink-text-gradient" },
     ],
-    image: CompileVortex,
+    image: [CompileVortex,],
     source_code_link: "https://github.com/lohitkolluri/CompileVortex",
   },
 ];

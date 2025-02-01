@@ -14,8 +14,10 @@ import weatherpedia from "./projects/WeatherPedia.png";
 import termpw from "./projects/termpw.png";
 import payloadmaster from "./projects/payloadmaster.png";
 import mhft from "./projects/mhft.png";
-import sketcher from "./projects/sketcher.png";
 import CompileVortex from "./projects/CompileVortex.png";
+import shortMaker1 from "./projects/shortmake_1.png";
+import shortMaker2 from "./projects/shortmake_2.png";
+import shortMakerVid from "./projects/ShortsMaker_v.mp4";
 
 // Import tech logos
 import css from "./tech/css.png";
@@ -53,8 +55,11 @@ export {
   termpw,
   payloadmaster,
   mhft,
-  sketcher,
+  // sketcher,
   CompileVortex,
+  shortMaker1,
+  shortMaker2,
+  shortMakerVid,
   logo,
   menu,
   close,

@@ -11,7 +11,7 @@ const ProjectCard = React.memo(({ name, description, tags, image, source_code_li
   return (
     <div className="card">
       <div className="card2">
-        <img className="card__image" src={image} alt="project_image" />
+        <img className="card__image" src={Array.isArray(image) ? image[0] : image} alt="project_image" />
         <div className="card__content">
         <h3 className="title text-white font-bold text-[24px]">{name}</h3>
         <p className="mt-2 text-secondary text-[14px]">{description}</p>
