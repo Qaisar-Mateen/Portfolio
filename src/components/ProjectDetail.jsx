@@ -75,7 +75,6 @@ const ProjectDetail = ({ project, onClose }) => {
             )}
           </div>
         )}
-        {/* Move View Code button here, removing absolute positioning */}
         {source_code_link && (
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-white text-xl font-bold">Detail Description</h3>
@@ -88,14 +87,8 @@ const ProjectDetail = ({ project, onClose }) => {
           </div>
         )}
         {/* Updated scroll container with better height calculation and bottom padding */}
-        <div className="h-[calc(100%-22rem)] overflow-y-auto pr-2 
-          scrollbar-thin 
-          scrollbar-thumb-gray-500 
-          hover:scrollbar-thumb-gray-400 
-          scrollbar-track-transparent 
-          scrollbar-thumb-rounded-full"
-        >
-          <div className="mb-4 pb-8"> {/* Added bottom padding */}
+        <div className="h-[calc(100%-22rem)] overflow-y-auto pr-2 custom-scrollbar">
+          <div className="mb-4 pb-8">
             <p className="text-secondary text-[16px] text-base sm:text-lg">
               {descriptionDetail || "No detailed description provided."}
             </p>
