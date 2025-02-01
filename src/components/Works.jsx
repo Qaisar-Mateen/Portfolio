@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
 import "../genStyle.css";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
+const ProjectCard = React.memo(({ name, description, tags, image, source_code_link }) => {
   return (
     <div className="card">
       <div className="card2">
@@ -39,9 +38,35 @@ const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
       </div>
     </div> 
   );
-};
+});
 
 const Works = () => {
+  const [visibleCount, setVisibleCount] = useState(3);
+  const loadMoreRef = useRef(null);
+
+  const loadMore = useCallback(() => {
+    setVisibleCount((prev) => Math.min(prev + 4, projects.length));
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          loadMore();
+        }
+      },
+      { threshold: 1 }
+    );
+
+    if (loadMoreRef.current) {
+      observer.observe(loadMoreRef.current);
+    }
+
+    return () => {
+      if (loadMoreRef.current) observer.unobserve(loadMoreRef.current);
+    };
+  }, [loadMore]);
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -56,10 +81,12 @@ const Works = () => {
         </motion.p>
       </div>
       <div className="mt-20 flex flex-wrap gap-10">
-        {projects.map((project, index) => (
+        {projects.slice(0, visibleCount).map((project, index) => (
           <ProjectCard key={`project-${index}`} {...project} />
         ))}
       </div>
+      
+      <div ref={loadMoreRef} style={{ height: "1px" }} />
     </>
   );
 };

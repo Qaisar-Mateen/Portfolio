@@ -95,6 +95,19 @@ export const experiences = [
 
 export const projects = [
   {
+    name: "ShortsMaker",
+    description:
+      "Automate the creation of YouTube Shorts using AI, create a faceless short simply by providing a video topic to talk about and the AI will generate and even upload the video for you.",
+    tags: [
+      { name: "Python", color: "blue-text-gradient" },
+      { name: "PyMovie", color: "green-text-gradient" },
+      { name: "AssemblyAI", color: "pink-text-gradient" },
+      { name: "OpenAI", color: "green-text-gradient" },
+    ],
+    image: weatherpedia,
+    source_code_link: "https://github.com/Qaisar-Mateen/ShortsMaker",
+  },
+  {
     name: "WeatherPedia",
     description:
       "Web-based platform that allows users to access weather information for their location by entering it in the search field",
@@ -102,7 +115,7 @@ export const projects = [
       { name: "Javascript", color: "blue-text-gradient" },
       { name: "HTML", color: "green-text-gradient" },
       { name: "bootstrap 5.3.0", color: "pink-text-gradient" },
-      { name: "Weather API by API Ninjas", color: "yellow-text-gradient" },
+      { name: "Weather API by API Ninjas", color: "green-text-gradient" },
     ],
     image: weatherpedia,
     source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
