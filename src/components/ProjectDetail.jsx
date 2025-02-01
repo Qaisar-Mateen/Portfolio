@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
 import ReactDOM from "react-dom";
 
 const ProjectDetail = ({ project, onClose }) => {
@@ -24,8 +24,15 @@ const ProjectDetail = ({ project, onClose }) => {
     setCurrent((prev) => (prev - 1 + mediaCount) % mediaCount);
   }, [mediaCount]);
 
-  // Fallback to document.body if "modal-root" is not found:
   const modalContainer = document.getElementById("modal-root") || document.body;
+
+  // Add effect to prevent background scroll
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
 
   return ReactDOM.createPortal(
     <div onClick={onClose} className="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-70 p-4">
@@ -39,38 +46,61 @@ const ProjectDetail = ({ project, onClose }) => {
         {mediaCount > 0 && (
           <div className="mb-4 relative">
             {sliderMedia[current].type === "video" ? (
-              <video controls className="w-full rounded max-h-60 object-cover">
+              <video controls className="w-full rounded max-h-60 object-contain">
                 <source src={sliderMedia[current].src} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             ) : (
-              <img src={sliderMedia[current].src} alt={`slide ${current + 1}`} className="w-full rounded max-h-60 object-cover" />
+              <img src={sliderMedia[current].src} alt={`slide ${current + 1}`} className="w-full rounded max-h-60 object-contain" />
             )}
             {mediaCount > 1 && (
               <>
-                <button onClick={prevMedia} className="absolute left-0 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-gray-700 text-white rounded-l">Prev</button>
-                <button onClick={nextMedia} className="absolute right-0 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-gray-700 text-white rounded-r">Next</button>
+                <button 
+                  onClick={prevMedia} 
+                  className="absolute left-0 top-1/2 transform -translate-y-1/2 px-2 py-2 bg-gray-700 bg-opacity-50 rounded-full hover:bg-opacity-75 hover:scale-105 transition-all duration-150"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button 
+                  onClick={nextMedia} 
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 px-2 py-2 bg-gray-700 bg-opacity-50 rounded-full hover:bg-opacity-75 hover:scale-105 transition-all duration-150"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </>
             )}
           </div>
         )}
-        <div className="h-[calc(100%-14rem)] overflow-y-auto pr-2 scrollbar-thin scrollbar-track-gray-700 scrollbar-thumb-gray-500">
-          <div className="mb-4">
+        {/* Move View Code button here, removing absolute positioning */}
+        {source_code_link && (
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-white text-xl font-bold">Detail Description</h3>
+            <button
+              onClick={() => window.open(source_code_link, "_blank")}
+              className="cssbuttons-io"
+            >
+              <span>View Code</span>
+            </button>
+          </div>
+        )}
+        {/* Updated scroll container with better height calculation and bottom padding */}
+        <div className="h-[calc(100%-22rem)] overflow-y-auto pr-2 
+          scrollbar-thin 
+          scrollbar-thumb-gray-500 
+          hover:scrollbar-thumb-gray-400 
+          scrollbar-track-transparent 
+          scrollbar-thumb-rounded-full"
+        >
+          <div className="mb-4 pb-8"> {/* Added bottom padding */}
             <p className="text-secondary text-[16px] text-base sm:text-lg">
               {descriptionDetail || "No detailed description provided."}
             </p>
           </div>
         </div>
-        {source_code_link && (
-          <div className="absolute bottom-4 left-0 right-0 px-4">
-            <button
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="cssbuttons-io w-full"
-            >
-              <span>Open in VS Code</span>
-            </button>
-          </div>
-        )}
       </div>
     </div>,
     modalContainer
