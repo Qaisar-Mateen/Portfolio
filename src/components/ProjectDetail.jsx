@@ -1,62 +1,79 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
+import ReactDOM from "react-dom";
 
 const ProjectDetail = ({ project, onClose }) => {
-  const { name, descriptionDetail, videoUrl, images = [], source_code_link } = project;
+  const { name, video, descriptionDetail, image = [], source_code_link } = project;
+
+  const sliderMedia = useMemo(() => {
+    const media = [];
+    if (video) media.push({ type: "video", src: video });
+    (Array.isArray(image) ? image : [image]).forEach((img) =>
+      media.push({ type: "image", src: img })
+    );
+    return media;
+  }, [video, image]);
+
   const [current, setCurrent] = useState(0);
+  const mediaCount = sliderMedia.length;
 
-  const nextImage = () => {
-    setCurrent((prev) => (prev + 1) % images.length);
-  };
+  const nextMedia = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % mediaCount);
+  }, [mediaCount]);
 
-  const prevImage = () => {
-    setCurrent((prev) => (prev - 1 + images.length) % images.length);
-  };
+  const prevMedia = useCallback(() => {
+    setCurrent((prev) => (prev - 1 + mediaCount) % mediaCount);
+  }, [mediaCount]);
 
-  return (
-    <div onClick={onClose} className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4">
-      <div onClick={(e) => e.stopPropagation()} className="relative bg-white rounded-lg p-4 sm:p-6 md:p-8 max-w-full sm:max-w-4xl w-full mx-4 sm:mx-auto overflow-auto">
-        <button onClick={onClose} className="absolute top-2 right-2 text-xl font-bold">&times;</button>
-        <h2 className="text-3xl font-bold mb-4">{name}</h2>
-        {/* Video Section */}
-        {videoUrl && (
-          <div className="mb-4">
-            <video controls className="w-full rounded max-h-80 object-cover">
-              <source src={videoUrl} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        )}
-        {/* Image Slider */}
-        {images.length > 0 && (
+  // Fallback to document.body if "modal-root" is not found:
+  const modalContainer = document.getElementById("modal-root") || document.body;
+
+  return ReactDOM.createPortal(
+    <div onClick={onClose} className="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-70 p-4">
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative rounded-lg p-4 sm:p-6 md:p-8 w-full sm:w-3/4 md:w-1/2 h-[90vh] mx-4 sm:mx-auto overflow-hidden"
+        style={{ backgroundColor: "#222020" }}
+      >
+        <button onClick={onClose} className="absolute top-2 right-2 text-xl font-bold text-white">&times;</button>
+        <h2 className="text-3xl font-bold mb-4 text-white">{name}</h2>
+        {mediaCount > 0 && (
           <div className="mb-4 relative">
-            <img src={images[current]} alt={`slide ${current + 1}`} className="w-full rounded max-h-80 object-cover" />
-            {images.length > 1 && (
+            {sliderMedia[current].type === "video" ? (
+              <video controls className="w-full rounded max-h-60 object-cover">
+                <source src={sliderMedia[current].src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <img src={sliderMedia[current].src} alt={`slide ${current + 1}`} className="w-full rounded max-h-60 object-cover" />
+            )}
+            {mediaCount > 1 && (
               <>
-                <button onClick={prevImage} className="absolute left-0 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-gray-700 text-white rounded-l">Prev</button>
-                <button onClick={nextImage} className="absolute right-0 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-gray-700 text-white rounded-r">Next</button>
+                <button onClick={prevMedia} className="absolute left-0 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-gray-700 text-white rounded-l">Prev</button>
+                <button onClick={nextMedia} className="absolute right-0 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-gray-700 text-white rounded-r">Next</button>
               </>
             )}
           </div>
         )}
-        {/* Detailed Description */}
-        <div className="mb-4">
-          <p className="text-gray-700 text-base sm:text-lg">{descriptionDetail || "No detailed description provided."}</p>
+        <div className="h-[calc(100%-14rem)] overflow-y-auto pr-2 scrollbar-thin scrollbar-track-gray-700 scrollbar-thumb-gray-500">
+          <div className="mb-4">
+            <p className="text-secondary text-[16px] text-base sm:text-lg">
+              {descriptionDetail || "No detailed description provided."}
+            </p>
+          </div>
         </div>
-        {/* VS Code Link */}
         {source_code_link && (
-          <div className="text-right">
-            <a 
-              href={source_code_link} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          <div className="absolute bottom-4 left-0 right-0 px-4">
+            <button
+              onClick={() => window.open(source_code_link, "_blank")}
+              className="cssbuttons-io w-full"
             >
-              Open in VS Code
-            </a>
+              <span>Open in VS Code</span>
+            </button>
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    modalContainer
   );
 };
 
