@@ -100,9 +100,9 @@ export const projects = [
     name: "ShortsMaker",
     video: shortMakerVid,
     descriptionDetail:
-      "ShortsMaker is a comprehensive tool designed to automate the creation of YouTube Shorts. The main functionality revolves around providing a video topic, after which the tool handles the entire process of content creation and publication. The project is predominantly developed in Python, which constitutes 72.2% of the codebase, ensuring robust and efficient handling of script generation, audio creation, and video processing tasks. HTML, making up 17.5% of the codebase, is used for the frontend interface, providing a user-friendly platform for users to interact with the tool. JavaScript, accounting for 10.3% of the codebase, enhances the frontend functionality, enabling dynamic and responsive features. The core features of ShortsMaker include generating video scripts using advanced GPT models, converting these scripts into speech using text-to-speech technology, and combining various video clips to form a cohesive video. Additionally, it supports the automation of video uploads to YouTube, streamlining the entire workflow from content creation to publication. The script generation feature leverages GPT models to create engaging scripts based on the provided video topic. The text-to-speech functionality then converts these scripts into audio, which is synchronized with video clips. The tool also includes capabilities for adding music and subtitles to the videos, ensuring they are engaging and informative. ShortsMaker integrates with the YouTube API to automate the video upload process. This includes generating metadata such as titles, descriptions, and keywords, which are essential for optimizing the video's reach and engagement on YouTube. The tool handles OAuth authentication to securely upload videos to the user's YouTube channel. Overall, ShortsMaker simplifies the process of creating and publishing YouTube Shorts, making it accessible to users with minimal technical expertise. By automating the most time-consuming aspects of video production, it allows users to focus on generating creative content ideas",
+      "It's an AI Agent named ShortsMaker, it's a comprehensive tool designed to automate the creation of YouTube Shorts. The main functionality revolves around providing a video topic, after which the tool handles the entire process of content creation and publication. The project is predominantly developed in Python, which constitutes 72.2% of the codebase, ensuring robust and efficient handling of script generation, audio creation, and video processing tasks. HTML, making up 17.5% of the codebase, is used for the frontend interface, providing a user-friendly platform for users to interact with the tool. JavaScript, accounting for 10.3% of the codebase, enhances the frontend functionality, enabling dynamic and responsive features. The core features of ShortsMaker include generating video scripts using advanced GPT models, converting these scripts into speech using text-to-speech technology, and combining various video clips to form a cohesive video. Additionally, it supports the automation of video uploads to YouTube, streamlining the entire workflow from content creation to publication. The script generation feature leverages GPT models to create engaging scripts based on the provided video topic. The text-to-speech functionality then converts these scripts into audio, which is synchronized with video clips. The tool also includes capabilities for adding music and subtitles to the videos, ensuring they are engaging and informative. ShortsMaker integrates with the YouTube API to automate the video upload process. This includes generating metadata such as titles, descriptions, and keywords, which are essential for optimizing the video's reach and engagement on YouTube. The tool handles OAuth authentication to securely upload videos to the user's YouTube channel. Overall, ShortsMaker simplifies the process of creating and publishing YouTube Shorts, making it accessible to users with minimal technical expertise. By automating the most time-consuming aspects of video production, it allows users to focus on generating creative content ideas",
     description:
-      "Automate the creation of YouTube Shorts using AI, create a faceless short simply by providing a video topic to talk about and the AI will generate and even upload the video for you.",
+      "AI Agent to automate the creation of YouTube Shorts using AI, create a faceless short simply by providing a video topic to talk about and the AI will generate and even upload the video for you.",
     tags: [
       { name: "Python", color: "blue-text-gradient" },
       { name: "PyMovie", color: "green-text-gradient" },
@@ -113,14 +113,16 @@ export const projects = [
     source_code_link: "https://github.com/Qaisar-Mateen/ShortsMaker",
   },
   {
-    name: "WeatherPedia",
+    name: "Fake News Detection",
+    video: "",
+    descriptionDetail:
+    "",
     description:
-      "Web-based platform that allows users to access weather information for their location by entering it in the search field",
+      "",
     tags: [
-      { name: "Javascript", color: "blue-text-gradient" },
-      { name: "HTML", color: "green-text-gradient" },
-      { name: "bootstrap 5.3.0", color: "pink-text-gradient" },
-      { name: "Weather API by API Ninjas", color: "green-text-gradient" },
+      { name: "DeepLearning", color: "blue-text-gradient" },
+      { name: "NLP", color: "green-text-gradient" },
+      { name: "TensorFLow", color: "pink-text-gradient" },
     ],
     image: [weatherpedia,],
     source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
