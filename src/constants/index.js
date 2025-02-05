@@ -11,7 +11,10 @@ import {
   nodejs,
   git,
   edunet,
-  weatherpedia,
+  FakeGif1,
+  FakeGif2,
+  FakeImg1,
+  FakeImg2,
   termpw,
   payloadmaster,
   threejs,
@@ -114,18 +117,18 @@ export const projects = [
   },
   {
     name: "Fake News Detection",
-    video: "",
+    // video: "",
     descriptionDetail:
-    "",
+      "It's an AI-powered Fake News Detection Model, designed to analyze and classify news articles as real or fake using NLP and deep learning. The model processes text input, extracts key linguistic features, and applies machine learning techniques to detect misinformation with high accuracy. The project is primarily developed in Python, making up the majority of the codebase, ensuring efficient text processing, model training, and evaluation. TensorFlow and PyTorch power the deep learning models, providing flexibility in experimenting with different architectures like LSTMs, CNNs, and Transformers for optimal performance. Scikit-learn is used for feature extraction techniques such as TF-IDF and word embeddings, enhancing the model's ability to differentiate between real and fake news based on textual patterns. The system follows a structured pipeline, starting with data collection from credible datasets like FakeNewsNet and LIAR. Preprocessing techniques include tokenization, stopword removal, lemmatization, and vectorization to clean and transform raw text into a format suitable for model training. The model then undergoes rigorous training and evaluation, utilizing confusion matrices, precision-recall scores, and F1-measure to ensure reliability in detecting misinformation. A key feature of the model is its real-time inference capability, allowing users to input news articles and receive instant credibility assessments. Additionally, it supports explainability techniques, such as attention mechanisms, to highlight the most influential words contributing to the classification decision. The system can be integrated into web applications, chatbots, and browser extensions, making it accessible for journalists, researchers, and general users. By leveraging AI and NLP, this Fake News Detection Model provides an automated, scalable solution to combat misinformation. It empowers users to make informed decisions, helping to create a more trustworthy digital information space.",
     description:
-      "",
+      "A Fake News Detection Model using NLP and deep learning to analyze articles and determine if they are real or fake. It leverages text preprocessing, TF-IDF, and neural networks to detect misinformation. Try it out and fight fake news!",
     tags: [
       { name: "DeepLearning", color: "blue-text-gradient" },
       { name: "NLP", color: "green-text-gradient" },
       { name: "TensorFLow", color: "pink-text-gradient" },
     ],
-    image: [weatherpedia,],
-    source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
+    image: [FakeGif1, FakeGif2, FakeImg1, FakeImg2],
+    source_code_link: "https://colab.research.google.com/drive/1BiVfBLUXeAKLvEAL-LAXftk0Xfzwjo4M?usp=sharing",
   },
   {
     name: "Terminal Like Portfolio Website",

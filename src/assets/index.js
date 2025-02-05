@@ -18,6 +18,10 @@ import CompileVortex from "./projects/CompileVortex.png";
 import shortMaker1 from "./projects/shortmake_1.png";
 import shortMaker2 from "./projects/shortmake_2.png";
 import shortMakerVid from "./projects/ShortsMaker_v.mp4";
+import FakeGif1 from "./projects/Fake_News_Detector.gif";
+import FakeGif2 from "./projects/Fake_News_Detector2.gif";
+import FakeImg1 from "./projects/Fake_News_Detector_1.png";
+import FakeImg2 from "./projects/Fake_News_Detector_2.png";
 
 // Import tech logos
 import css from "./tech/css.png";
@@ -55,6 +59,10 @@ export {
   termpw,
   payloadmaster,
   mhft,
+  FakeGif1,
+  FakeGif2,
+  FakeImg1,
+  FakeImg2,
   // sketcher,
   CompileVortex,
   shortMaker1,
