@@ -15,6 +15,9 @@ import {
   FakeGif2,
   FakeImg1,
   FakeImg2,
+  Recomender1,
+  Recomender2,
+  Recomender3,
   termpw,
   payloadmaster,
   threejs,
@@ -131,16 +134,18 @@ export const projects = [
     source_code_link: "https://colab.research.google.com/drive/1BiVfBLUXeAKLvEAL-LAXftk0Xfzwjo4M?usp=sharing",
   },
   {
-    name: "Terminal Like Portfolio Website",
+    name: "AI Travel Companion",
+    descriptionDetail:
+      "The AI-Travel Companion project enhances travel experiences using AI-driven personalization. It offers tailored recommendations based on user preferences, interests, and history while providing access to an AI travel agent with custom commands. The system consists of two main modules: the Countries Recommender and the AI Travel Agent Chatbot. The recommender system employs machine learning techniques, including popularity-based, collaborative filtering, and content-based recommendations, combining them into a hybrid model for personalized travel suggestions. It also integrates real-time data via APIs to display destinations, cities, and accommodations through a user-friendly GUI. The AI Travel Agent Chatbot, powered by the Llama3 model, acts as a virtual travel assistant, responding to user queries and offering travel advice. It utilizes natural language processing (NLP) for interactive, personalized responses. By combining multiple AI techniques, the AI-Travel Companion ensures accurate, diverse, and engaging travel recommendations, simplifying trip planning and enhancing user experiences.",
     description:
-      "A terminal themed portfolio website that allows users to type into the terminal and use commands like a real terminal.",
+      "The AI-Travel Companion project transforms travel with AI-driven personalization, offering tailored recommendations based on user preferences, interests, and history. It also features an AI travel agent for seamless planning and enhanced travel experiences.",
     tags: [
-      { name: "HTML", color: "blue-text-gradient" },
-      { name: "css", color: "green-text-gradient" },
-      { name: "Javascript", color: "pink-text-gradient" },
+      { name: "Python", color: "blue-text-gradient" },
+      { name: "ML", color: "green-text-gradient" },
+      { name: "ANN", color: "pink-text-gradient" },
     ],
-    image: [termpw,],
-    source_code_link: "https://github.com/lohitkolluri/lohitkolluri.github.io",
+    image: [Recomender1, Recomender2, Recomender3],
+    source_code_link: "https://github.com/Qaisar-Mateen/AI-TravelRecommender",
   },
   {
     name: "Mental Health Fitness Tracker",

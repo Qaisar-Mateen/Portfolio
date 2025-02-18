@@ -22,6 +22,10 @@ import FakeGif1 from "./projects/Fake_News_Detector.gif";
 import FakeGif2 from "./projects/Fake_News_Detector2.gif";
 import FakeImg1 from "./projects/Fake_News_Detector_1.png";
 import FakeImg2 from "./projects/Fake_News_Detector_2.png";
+import Recomender1 from "./projects/recommendDemo.gif"
+import Recomender2 from "./projects/chatDemo.gif"
+import Recomender3 from "./projects/Recommender Engine.png"
+
 
 // Import tech logos
 import css from "./tech/css.png";
@@ -63,6 +67,9 @@ export {
   FakeGif2,
   FakeImg1,
   FakeImg2,
+  Recomender1,
+  Recomender2,
+  Recomender3,
   // sketcher,
   CompileVortex,
   shortMaker1,
