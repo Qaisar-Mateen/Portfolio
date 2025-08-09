@@ -18,15 +18,17 @@ import {
   Recomender1,
   Recomender2,
   Recomender3,
-  termpw,
-  payloadmaster,
+  rag1,
+  rag2,
+  rag3,
+  ragvid,
+  raggif,
   threejs,
   mhft,
   shortMaker1,
   shortMaker2,
   shortMakerVid,
   mathwork,
-  CompileVortex,
   eduskill,
   aqussys0,
   aqussys1,
@@ -142,6 +144,22 @@ export const projects = [
     // source_code_link: "https://github.com/Qaisar-Mateen/ShortsMaker",
   },
   {
+    name: "RAGenius",
+    video: ragvid,
+    description:
+      "An AI-powered Lecture Notes Q&A Bot that leverages Retrieval-Augmented Generation (RAG), Qdrant vector search, and advanced LLMs to instantly retrieve contextually relevant information from lecture notes, slides, and textbooks, delivering concise, accurate answers and reducing manual search time for students.",
+    descriptionDetail:
+      "The Lecture Notes Q&A Bot is an intelligent, AI-powered learning assistant that revolutionizes how students interact with their study materials by using advanced Retrieval-Augmented Generation (RAG), Qdrant vector search, and cutting-edge large language models to deliver instant, accurate, and context-aware answers to any academic question; students simply upload lecture notes, slides, or textbooks in formats like PDF, DOCX, or PPTX, and the system automatically processes, cleans, and organizes the content into searchable, meaningful chunks for lightning-fast retrieval; when a question is asked, the AI retrieves the most relevant passages and generates clear, concise explanations in real-time, eliminating the need for tedious manual searching and helping learners focus on understanding rather than hunting for information; benchmark tests and student studies show up to a 40% reduction in search time, consistently high answer relevance, and a user satisfaction rating of 4.6/5, making it an invaluable tool for personalized learning, exam preparation, and quick concept revision; with its sleek Streamlit-powered interface, scalable architecture, and domain adaptability, the Lecture Notes Q&A Bot offers a smarter, faster, and more engaging way to learn, turning complex academic materials into instant, accessible knowledge.",
+    tags: [
+      { name: "Graph RAG", color: "blue-text-gradient" },
+      { name: "Deep Learning", color: "green-text-gradient" },
+      { name: "", color: "pink-text-gradient" },
+    ],
+    image: [raggif, rag1, rag2, rag3],
+    source_code_link: "none",
+    // source_code_link:  "https://github.com/lohitkolluri/mental_health_fitness_tracker",
+  },
+  {
     name: "Fake News Detection",
     // video: "",
     descriptionDetail:
@@ -185,15 +203,5 @@ export const projects = [
     image: [mhft,],
     source_code_link: "none",
     // source_code_link:  "https://github.com/lohitkolluri/mental_health_fitness_tracker",
-  },
-  {
-    name: "PayloadMaster",
-    description:
-      "Tool to automate payload creation using the Metasploit framework",
-    tags: [
-      { name: "shell", color: "blue-text-gradient" },
-    ],
-    image: [payloadmaster,],
-    source_code_link: "https://github.com/lohitkolluri/PayloadMaster",
   },
 ];

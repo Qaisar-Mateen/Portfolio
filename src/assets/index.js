@@ -30,6 +30,11 @@ import aqussys1 from "./projects/aqusys1.png";
 import aqussys2 from "./projects/aqusys2.png";
 import aqussys3 from "./projects/aqusys3.png";
 import aqussysVid from "./projects/AQUSys.mp4";
+import rag1 from "./projects/rag1.png";
+import rag2 from "./projects/rag2.png";
+import rag3 from "./projects/rag3.png";
+import ragvid from "./projects/ragvid.mp4";
+import raggif from "./projects/ragvid.gif";
 
 
 // Import tech logos
@@ -85,6 +90,11 @@ export {
   shortMaker1,
   shortMaker2,
   shortMakerVid,
+  rag1,
+  rag2,
+  rag3,
+  ragvid,
+  raggif,
   logo,
   menu,
   close,
