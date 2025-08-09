@@ -25,7 +25,7 @@ const ProjectCard = React.memo(({ name, description, tags, image, source_code_li
         </div>
         <div className="card__btns">
           <button className="cssbuttons-io" onClick={showDetail}><span>View Detail</span></button>
-          <button className="cssbuttons-io"  onClick={() => window.open(source_code_link, "_blank")}>
+          {source_code_link != 'none' && <button className="cssbuttons-io"  onClick={() => window.open(source_code_link, "_blank")}>
             <span>
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0h24v24H0z" fill="none"></path>
@@ -34,7 +34,7 @@ const ProjectCard = React.memo(({ name, description, tags, image, source_code_li
                 ></path>
               </svg>Code
             </span>
-          </button>
+          </button>}
         </div>
       </div>
     </div> 

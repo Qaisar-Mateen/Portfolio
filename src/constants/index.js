@@ -28,6 +28,11 @@ import {
   mathwork,
   CompileVortex,
   eduskill,
+  aqussys0,
+  aqussys1,
+  aqussys2,
+  aqussys3,
+  aqussysVid,
 } from "../assets";
 
 export const navLinks = [
@@ -103,6 +108,23 @@ export const experiences = [
 
 export const projects = [
   {
+    name: "AQUSys Intelligence",
+    video: aqussysVid,
+    descriptionDetail:
+      "AQUSys Intelligence is an AI-powered recruitment platform designed to transform the hiring process by enabling companies to post job openings, have candidates interviewed by an intelligent AI agent, and receive automatically ranked resumes tailored to their specific requirements. Developed with a focus on efficiency, fairness, and accuracy, the platform replaces the conventional, time-consuming screening process with a faster, cost-effective solution that delivers higher-quality shortlists. The AI agent conducts structured interviews to assess not just the candidate’s experience but also their skills, problem-solving ability, communication, and cultural fit, ensuring that evaluations go beyond the limitations of a traditional resume. These assessments are then combined with automated resume analysis, leveraging NLP and machine learning models to generate a ranked list of candidates most aligned with the company’s needs. For employers, this means reduced hiring costs, faster decision-making, and a more insightful screening process that prioritizes quality over quantity. For candidates, AQUSys Intelligence offers a fairer chance to showcase their strengths, personality, and capabilities—especially for those who may not stand out through a resume alone—ultimately leveling the playing field and reducing bias. The system is built to be scalable for small businesses, large enterprises, and recruitment agencies, integrating seamlessly with existing HR workflows and Applicant Tracking Systems (ATS). Its core technology stack involves advanced natural language processing for interview and resume understanding, scoring algorithms for ranking candidates, and secure cloud infrastructure for handling sensitive data. By combining automation with intelligent analysis, AQUSys Intelligence delivers a win-win hiring ecosystem where companies get the right talent faster, and candidates get the opportunity to shine beyond paper credentials.",
+    description:
+      "AQUSys Intelligence uses AI-driven interviews and intelligent resume ranking to deliver faster, fairer, and more accurate hiring decisions—showcasing candidate skills, personality, and problem-solving abilities beyond resumes to ensure better matches, reduced hiring costs, and improved talent quality for employers.",
+    tags: [
+      { name: "AI Agent", color: "blue-text-gradient" },
+      { name: "SaaS", color: "green-text-gradient" },
+      { name: "AI", color: "pink-text-gradient" },
+      { name: "RAG", color: "green-text-gradient" },
+    ],
+    image: [aqussys0, aqussys1, aqussys2, aqussys3],
+    source_code_link: "none",
+    // source_code_link: "https://github.com/Qaisar-Mateen/ShortsMaker",
+  },
+  {
     name: "ShortsMaker",
     video: shortMakerVid,
     descriptionDetail:
@@ -116,7 +138,8 @@ export const projects = [
       { name: "OpenAI", color: "green-text-gradient" },
     ],
     image: [shortMaker1, shortMaker2],
-    source_code_link: "https://github.com/Qaisar-Mateen/ShortsMaker",
+    source_code_link: "none",
+    // source_code_link: "https://github.com/Qaisar-Mateen/ShortsMaker",
   },
   {
     name: "Fake News Detection",
@@ -145,20 +168,23 @@ export const projects = [
       { name: "ANN", color: "pink-text-gradient" },
     ],
     image: [Recomender1, Recomender2, Recomender3],
-    source_code_link: "https://github.com/Qaisar-Mateen/AI-TravelRecommender",
+    // source_code_link: "https://github.com/Qaisar-Mateen/AI-TravelRecommender",
+    source_code_link: "none",
   },
   {
-    name: "Mental Health Fitness Tracker",
+    name: "Crypto Coin Predictor",
     description:
-      "ML model that utilizes regression techniques to provide insights into mental health and make predictions based on the available data.",
+      "A Crypto Currency trend predictor using time series model only support for Bitcoin and Ethereum do note that the prediction may not 100% reflect the real price",
+    descriptionDetail:
+      "The Crypto Coin Predictor project leverages time series analysis techniques to forecast cryptocurrency trends, specifically for Bitcoin and Ethereum. By analyzing historical price data and market trends, the model aims to provide insights into potential future price movements. However, it's important to note that the predictions made by the model may not always accurately reflect real-world prices due to the volatile nature of cryptocurrency markets.",
     tags: [
       { name: "Machine Learning", color: "blue-text-gradient" },
-      { name: "Jupyter Notebook", color: "green-text-gradient" },
-      { name: "Regression Algorithms", color: "pink-text-gradient" },
+      { name: "Deep Learning", color: "green-text-gradient" },
+      { name: "Time Series Analysis", color: "pink-text-gradient" },
     ],
     image: [mhft,],
-    source_code_link:
-      "https://github.com/lohitkolluri/mental_health_fitness_tracker",
+    source_code_link: "none",
+    // source_code_link:  "https://github.com/lohitkolluri/mental_health_fitness_tracker",
   },
   {
     name: "PayloadMaster",
@@ -169,17 +195,5 @@ export const projects = [
     ],
     image: [payloadmaster,],
     source_code_link: "https://github.com/lohitkolluri/PayloadMaster",
-  },
-  {
-    name: "CompileVortex",
-    description:
-      "Tool to automate payload creation using the Metasploit framework",
-    tags: [
-      { name: "Javascript", color: "blue-text-gradient" },
-      { name: "CSS", color: "green-text-gradient" },
-      { name: "HTML", color: "pink-text-gradient" },
-    ],
-    image: [CompileVortex,],
-    source_code_link: "https://github.com/lohitkolluri/CompileVortex",
   },
 ];

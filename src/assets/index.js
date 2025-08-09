@@ -13,7 +13,7 @@ import java from "./tech-stack/java.png";
 import weatherpedia from "./projects/WeatherPedia.png";
 import termpw from "./projects/termpw.png";
 import payloadmaster from "./projects/payloadmaster.png";
-import mhft from "./projects/mhft.png";
+import mhft from "./projects/price predictor demo.gif";
 import CompileVortex from "./projects/CompileVortex.png";
 import shortMaker1 from "./projects/shortmake_1.png";
 import shortMaker2 from "./projects/shortmake_2.png";
@@ -25,6 +25,11 @@ import FakeImg2 from "./projects/Fake_News_Detector_2.png";
 import Recomender1 from "./projects/recommendDemo.gif"
 import Recomender2 from "./projects/chatDemo.gif"
 import Recomender3 from "./projects/Recommender Engine.png"
+import aqussys0 from "./projects/aqusys0.png";
+import aqussys1 from "./projects/aqusys1.png";
+import aqussys2 from "./projects/aqusys2.png";
+import aqussys3 from "./projects/aqusys3.png";
+import aqussysVid from "./projects/AQUSys.mp4";
 
 
 // Import tech logos
@@ -70,6 +75,11 @@ export {
   Recomender1,
   Recomender2,
   Recomender3,
+  aqussys0,
+  aqussys2,
+  aqussys3,
+  aqussys1,
+  aqussysVid,
   // sketcher,
   CompileVortex,
   shortMaker1,

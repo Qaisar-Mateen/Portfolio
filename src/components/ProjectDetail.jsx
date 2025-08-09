@@ -75,7 +75,7 @@ const ProjectDetail = ({ project, onClose }) => {
             )}
           </div>
         )}
-        {source_code_link && (
+        {source_code_link != 'none' && (
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-white text-xl font-bold">Detail Description</h3>
             <button
