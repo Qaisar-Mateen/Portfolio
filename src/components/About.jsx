@@ -40,7 +40,7 @@ const About = () => {
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Hi, I'm Qaisar Mateen, an AI and Data Science enthusiast specializing in Artificial Inteligence, NLP, Computer Vision, Automation, and Data Science. I build intelligent solutions, from AI-driven recommendations to image analysis and automation.
+        Hi, I'm Mueez, an AI and Data Science enthusiast specializing in Artificial Inteligence, NLP, Computer Vision, Automation, and Data Science. I build intelligent solutions, from Multi-AI agents, AI-driven recommendations to image analysis and automation.
         <br /> <br />
         With expertise in model development, deployment, and data-driven insights, I help businesses harness AI for real-world impact. Explore my portfolio and reach out for collaborations-lets innovate together!
       </motion.p>
