@@ -124,7 +124,6 @@ export const projects = [
     ],
     image: [aqussys0, aqussys1, aqussys2, aqussys3],
     source_code_link: "none",
-    // source_code_link: "https://github.com/Qaisar-Mateen/ShortsMaker",
   },
   {
     name: "ShortsMaker",
@@ -141,7 +140,7 @@ export const projects = [
     ],
     image: [shortMaker1, shortMaker2],
     source_code_link: "none",
-    // source_code_link: "https://github.com/Qaisar-Mateen/ShortsMaker",
+    source_code_link: "https://github.com/Qaisar-Mateen/ShortsMaker",
   },
   {
     name: "RAGenius",
@@ -156,8 +155,7 @@ export const projects = [
       { name: "", color: "pink-text-gradient" },
     ],
     image: [raggif, rag1, rag2, rag3],
-    source_code_link: "none",
-    // source_code_link:  "https://github.com/lohitkolluri/mental_health_fitness_tracker",
+    source_code_link:  "https://github.com/Qaisar-Mateen/RAGenius",
   },
   {
     name: "Fake News Detection",
@@ -186,8 +184,7 @@ export const projects = [
       { name: "ANN", color: "pink-text-gradient" },
     ],
     image: [Recomender1, Recomender2, Recomender3],
-    // source_code_link: "https://github.com/Qaisar-Mateen/AI-TravelRecommender",
-    source_code_link: "none",
+    source_code_link: "https://github.com/Qaisar-Mateen/AI-TravelRecommender",
   },
   {
     name: "Crypto Coin Predictor",
@@ -201,7 +198,6 @@ export const projects = [
       { name: "Time Series Analysis", color: "pink-text-gradient" },
     ],
     image: [mhft,],
-    source_code_link: "none",
-    // source_code_link:  "https://github.com/lohitkolluri/mental_health_fitness_tracker",
+    source_code_link: "https://github.com/Qaisar-Mateen/Price-Predictor",
   },
 ];
