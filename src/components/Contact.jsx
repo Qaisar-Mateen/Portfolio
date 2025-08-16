@@ -8,17 +8,28 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import "../index.css";
 
-const InputField = ({ label, value, onChange, placeholder, name, type }) => (
+const InputField = ({ label, value, onChange, placeholder, name, type, isTextarea = false }) => (
   <label className="flex flex-col">
     <span className="text-white font-medium mb-4">{label}</span>
-    <input
-      type={type}
-      name={name}
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-    />
+    {isTextarea ? (
+      <textarea
+        rows={7}
+        name={name}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none"
+      />
+    ) : (
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+      />
+    )}
   </label>
 );
 
@@ -63,23 +74,31 @@ const Contact = () => {
       return;
     }
 
+    if (!form.message.trim()) {
+      setEmailError("Message is required.");
+      return;
+    }
+
     setLoading(true);
 
+    // EmailJS configuration
+    const serviceID = "service_2i75t28";
+    const templateID = "template_4yiccpl";
+    const publicKey = "2U3kD9kOA7kNysoVM";
+
+    const templateParams = {
+      from_name: form.name,
+      to_name: "Qaisar Mateen",
+      from_email: form.email,
+      to_email: "qaisarmateen313@gmail.com",
+      message: form.message,
+    };
+
     emailjs
-      .send(
-        "service_r2i0by4",
-        "template_mf5x3bh",
-        {
-          from_name: form.name,
-          to_name: "Qaisar Mateen",
-          from_email: form.email,
-          to_email: "qaisarmateen313@gmail.com",
-          message: form.message,
-        },
-        "p-gXzzyvEhPaJ0XA-"
-      )
+      .send(serviceID, templateID, templateParams, publicKey)
       .then(
-        () => {
+        (response) => {
+          console.log('EmailJS Success:', response);
           setLoading(false);
           setConfirmation("Thank you! I will get back to you as soon as possible.");
 
@@ -88,13 +107,20 @@ const Contact = () => {
             email: "",
             message: "",
           });
+        },
+        (error) => {
+          setLoading(false);
+          console.error('EmailJS Error:', error);
+          
+          if (error.status === 412) {
+            setConfirmation("Please check your EmailJS configuration. The service might need to be verified.");
+          } else if (error.status === 422) {
+            setConfirmation("Please fill in all required fields correctly.");
+          } else {
+            setConfirmation(`${publicKey}\n Something went wrong: ${error.text || error.message || 'Please try again later.'} `);
+          }
         }
-      )
-      .catch((error) => {
-        setLoading(false);
-        console.error(error);
-        setConfirmation("Something went wrong. Please try again. :/");
-      });
+      );
   };
 
   return (
@@ -130,7 +156,7 @@ const Contact = () => {
             value={form.message}
             onChange={handleChange}
             placeholder="What you want to say...?"
-            type="text"
+            isTextarea={true}
           />
 
           <button

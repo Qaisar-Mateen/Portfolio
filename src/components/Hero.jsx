@@ -60,8 +60,8 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className="text-[#915EFF]">Qaisar</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I do
+          <div className={`${styles.heroSubText} mt-2 text-white-100`}>
+            I do{" "}
             <Typewriter
               options={{
                 strings: ["AI & ML Engineer",  "NLP", "Data Science", "Developer"],
@@ -72,7 +72,7 @@ const Hero = () => {
                 pauseFor: 1500, // 1.5sec
               }}
             />
-          </p>
+          </div>
         </div>
       </div>
 
