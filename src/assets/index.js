@@ -11,7 +11,6 @@ import java from "./tech-stack/java.png";
 
 // Import project images
 import weatherpedia from "./projects/WeatherPedia.png";
-import termpw from "./projects/termpw.png";
 import payloadmaster from "./projects/payloadmaster.png";
 import mhft from "./projects/price predictor demo.gif";
 import CompileVortex from "./projects/CompileVortex.png";
@@ -36,6 +35,25 @@ import rag3 from "./projects/rag3.png";
 import ragvid from "./projects/ragvid.mp4";
 import raggif from "./projects/ragvid.gif";
 
+import myplate1 from "./projects/myplate.png";
+import myplate2 from "./projects/myplate-2.png";
+import myplate3 from "./projects/myplate-3.png";
+
+import roamly1 from "./projects/roamly.png";
+import roamly2 from "./projects/roamly-1.png";
+import roamly3 from "./projects/roamly-2.png";
+import roamly4 from "./projects/roamly-3.png";
+import roamly5 from "./projects/roamly-4.png";
+import roamly6 from "./projects/roamly-5.png";
+
+import copilot1 from "./projects/SOP Copilot.png";
+import copilot2 from "./projects/SOP Copilot-2.png";
+import copilot3 from "./projects/SOP Copilot-3.png";
+
+import forte1 from "./projects/forte-1.png";
+import forte2 from "./projects/forte-2.png";
+import forte3 from "./projects/forte-3.png";
+import forte4 from "./projects/forte-4.png";
 
 // Import tech logos
 import css from "./tech/css.png";
@@ -70,7 +88,6 @@ export {
   tailwind,
   threejs,
   weatherpedia,
-  termpw,
   payloadmaster,
   mhft,
   FakeGif1,
@@ -99,4 +116,20 @@ export {
   menu,
   close,
   eduskill,
+  myplate1,
+  myplate2,
+  myplate3,
+  roamly1,
+  roamly2,
+  roamly3,
+  roamly4,
+  roamly5,
+  roamly6,
+  copilot1,
+  copilot2,
+  copilot3,
+  forte1,
+  forte2,
+  forte3,
+  forte4,
 };

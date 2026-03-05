@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import "../genStyle.css";
@@ -42,32 +42,13 @@ const ProjectCard = React.memo(({ name, description, tags, image, source_code_li
 });
 
 const Works = () => {
-  const [visibleCount, setVisibleCount] = useState(3);
+  // start by showing six projects
+  const INITIAL_COUNT = 6;
+  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
   const [selectedProject, setSelectedProject] = useState(null); // new state
-  const loadMoreRef = useRef(null);
 
-  const loadMore = useCallback(() => {
-    setVisibleCount((prev) => Math.min(prev + 4, projects.length));
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          loadMore();
-        }
-      },
-      { threshold: 1 }
-    );
-
-    if (loadMoreRef.current) {
-      observer.observe(loadMoreRef.current);
-    }
-
-    return () => {
-      if (loadMoreRef.current) observer.unobserve(loadMoreRef.current);
-    };
-  }, [loadMore]);
+  const showAll = () => setVisibleCount(projects.length);
+  const showLess = () => setVisibleCount(INITIAL_COUNT);
 
   return (
     <>
@@ -91,8 +72,26 @@ const Works = () => {
           />
         ))}
       </div>
-      
-      <div ref={loadMoreRef} style={{ height: "1px" }} />
+
+      {/* toggle button: more when collapsed, less when expanded */}
+      <div className="w-full flex justify-center items-center mt-8">
+        {/* left divider */}
+        <div className="hidden sm:block h-[1px] w-16 bg-secondary mr-4" />
+
+        {visibleCount < projects.length ? (
+          <button className="cssbuttons-io" onClick={showAll}>
+            <span>View More</span>
+          </button>
+        ) : projects.length > INITIAL_COUNT && (
+          <button className="cssbuttons-io" onClick={showLess}>
+            <span>View Less</span>
+          </button>
+        )}
+
+        {/* right divider */}
+        <div className="hidden sm:block h-[1px] w-16 bg-secondary ml-4" />
+      </div>
+
       {selectedProject && (
         <ProjectDetail 
           project={selectedProject}

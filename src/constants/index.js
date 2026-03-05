@@ -35,6 +35,22 @@ import {
   aqussys2,
   aqussys3,
   aqussysVid,
+  myplate1,
+  myplate2,
+  myplate3,
+  roamly1,
+  roamly2,
+  roamly3,
+  roamly4,
+  roamly5,
+  roamly6,
+  copilot1,
+  copilot2,
+  copilot3,
+  forte1,
+  forte2,
+  forte3,
+  forte4,
 } from "../assets";
 
 export const navLinks = [
@@ -110,6 +126,70 @@ export const experiences = [
 
 export const projects = [
   {
+  name: "FORTE Intelligence",
+  // video: ,
+  description:
+    "AI-powered risk intelligence platform that analyzes global data to detect emerging security threats and deliver verified real-time alerts.",
+  descriptionDetail:
+    "FORTE is an advanced risk intelligence platform designed to help organizations operating in volatile regions monitor security threats and respond to critical incidents faster. Companies working across global markets often face fragmented information sources, delayed intelligence, and unreliable signals from unstructured data streams. FORTE addresses this challenge by transforming vast quantities of global information into structured, actionable insights.\n\nAt the core of the platform is an autonomous AI intelligence agent built using advanced natural language processing and predictive analysis models. The system continuously scans and processes large volumes of global data, including local news sources, social media signals, and regional reports in multiple languages. By analyzing patterns across these datasets, the AI can detect early indicators of instability, organized crime activity, civil unrest, and environmental hazards before they escalate into major incidents.\n\nTo ensure operational reliability and eliminate the risks associated with automated AI outputs, the platform integrates a human-in-the-loop validation workflow. Intelligence flagged by the AI is routed to a distributed network of regional analysts who verify context, accuracy, and relevance before information is delivered to clients. This hybrid architecture combines the speed of automated analysis with the judgment of human experts to maintain high-confidence intelligence outputs.\n\nThe platform presents verified intelligence through a real-time monitoring dashboard where organizations can track security developments across custom geographic zones, monitor casualty reports, and receive filtered alerts tailored to their operational footprint. By automating the intake and analysis of global data while preserving expert validation, FORTE significantly reduces the time between incident detection and client notification.\n\nUsed by organizations operating across more than 60 countries, including regions in the Middle East and Sub-Saharan Africa, FORTE enables companies to maintain operational continuity and protect personnel during rapidly evolving security events.",
+  tags: [
+    { name: "AI Agents", color: "blue-text-gradient" },
+    { name: "NLP", color: "green-text-gradient" },
+    { name: "Predictive Analytics", color: "pink-text-gradient" },
+    { name: "Real-Time Intelligence", color: "green-text-gradient" },
+  ],
+  image: [forte1, forte2, forte3, forte4],
+  source_code_link: "none",
+},
+  {
+  name: "Knowledge Copilot",
+  // video: knowledgeCopilotVid,
+  description:
+    "AI knowledge assistant that lets teams ask questions and instantly retrieve answers from internal documents using RAG.",
+  descriptionDetail:
+    "Knowledge Copilot is an AI-powered internal knowledge assistant designed to solve the common problem of fragmented organizational knowledge. In many companies, SOPs, onboarding documents, internal policies, and operational guidelines are scattered across PDFs, shared drives, and internal systems, making it difficult for employees to quickly find reliable information. This platform centralizes company knowledge and enables teams to retrieve answers instantly through natural language conversations.\n\nThe system is built on a Retrieval-Augmented Generation (RAG) architecture that ingests internal documents such as SOPs, manuals, HR policies, and operational guides. These documents are automatically processed, chunked, and converted into semantic embeddings which are stored in a vector database. When a user submits a question, the system retrieves the most relevant document segments using vector similarity search and feeds them into a large language model to generate accurate responses grounded strictly in company data.\n\nThis approach significantly reduces hallucinations and ensures that every response is traceable to verified internal sources. Employees can simply ask questions such as onboarding procedures, company policies, or operational workflows and receive clear, contextual answers within seconds.\n\nThe platform is orchestrated through an automated workflow architecture that manages document ingestion, embedding generation, query retrieval, and LLM response generation. This makes the system highly scalable and adaptable across departments such as HR, operations, support, IT, and management.\n\nBy transforming static documentation into an interactive knowledge system, Knowledge Copilot reduces repetitive internal questions, accelerates employee onboarding, and ensures consistent access to critical organizational knowledge.",
+  tags: [
+    { name: "RAG", color: "blue-text-gradient" },
+    { name: "Vector Search", color: "green-text-gradient" },
+    { name: "LLM", color: "pink-text-gradient" },
+    { name: "Automation", color: "green-text-gradient" },
+  ],
+  image: [copilot1, copilot2, copilot3],
+  source_code_link: "none",
+},
+  {
+  name: "Roamly AI",
+  // video: ,
+  description:
+    "AI travel planning platform that generates personalized destinations, itineraries, and bookings using machine learning and multi-agent assistants.",
+  descriptionDetail:
+    "Roamly AI is an end-to-end AI travel ecosystem designed to eliminate research fatigue and transform trip planning into an intelligent, conversational experience. Instead of forcing users to browse through thousands of generic options, the platform analyzes traveler preferences, behavioral signals, and global travel datasets to produce highly personalized recommendations within seconds.\n\nAt the core of the system is a hybrid machine learning recommendation engine that combines collaborative filtering, content-based analysis, and popularity signals to generate accurate destination suggestions. Using Approximate Nearest Neighbor (ANN) search, the system identifies travelers with similar behavioral patterns and recommends destinations based on collective insights while simultaneously matching destination attributes such as climate, budget, and cultural preferences against user-defined criteria.\n\nBeyond recommendations, Roamly AI introduces a multi-agent AI assistant that autonomously handles complex travel tasks. A central LLM orchestrator delegates responsibilities to specialized sub-agents responsible for flight discovery, accommodation matching, destination exploration, and dynamic itinerary generation. These agents work together to cross-reference real-time APIs and assemble complete travel plans optimized for time, cost, and user preferences.\n\nThe platform integrates with global travel APIs to retrieve live data for flights, hotels, weather conditions, and local attractions while leveraging vector search infrastructure to match user profiles with destination embeddings. This architecture allows Roamly AI to deliver highly relevant travel experiences with minimal user input.\n\nBy combining machine learning recommendation systems, vector search, and agentic AI orchestration, Roamly AI transforms travel planning from a time-consuming research task into an intelligent, automated process that delivers personalized itineraries within minutes.",
+  tags: [
+    { name: "Multi-Agent AI", color: "blue-text-gradient" },
+    { name: "Next.js", color: "pink-text-gradient" },
+    { name: "FastAPI", color: "green-text-gradient" },
+    { name: "Recommendation System", color: "green-text-gradient" },
+  ],
+  image: [roamly1, roamly2, roamly3, roamly4, roamly5, roamly6],
+  source_code_link: "none",
+},
+  {
+  name: "MyPlate Sentinel",
+  // video: myplateVid,
+  description:
+    "MyPlate Sentinel is an AI-powered automation platform that continuously monitors Luxembourg’s license plate registry and instantly alerts users when their desired custom plates become available, eliminating the need for manual searching.",
+  descriptionDetail:
+    "MyPlate Sentinel is an advanced automation platform engineered to solve the scarcity problem in Luxembourg highly competitive custom license plate market, where desired numbers can disappear within seconds. The system provides users with a fully automated 'set-and-forget' solution that continuously monitors official government registries and instantly alerts them when their desired plate becomes available. Instead of manually refreshing pages or repeatedly checking the registry, users simply register their target plates and rely on the platform intelligent monitoring infrastructure to handle the rest.\n\nAt the core of the system is a proprietary AI orchestration engine designed to mimic human behavior while operating at machine speed. Unlike conventional web scraping tools, the platform deploys an adaptive automation agent that intelligently interacts with the registry while avoiding detection by anti-automation systems. The system includes a strategic decision engine that evaluates the difficulty of specific plate targets and dynamically allocates computational resources such as proxy nodes and headless browser instances. This engine also calculates adaptive polling intervals to achieve an optimal balance between monitoring speed and stealth.\n\nA sophisticated stealth and emulation layer generates unique execution environments for each monitoring cycle, randomizing browser fingerprints, user-agent strings, headers, cookies, and interaction patterns to simulate authentic user behavior. This allows the system to maintain reliable access even in environments with strict anti-bot protections.\n\nTo maintain stability in a constantly changing environment, the platform incorporates self-correction heuristics that function as an internal resilience mechanism. When the system detects anomalies such as request timeouts, soft blocks, or suspicious response patterns, the agent automatically adjusts its behavior by rotating proxies, modifying request headers, and recalibrating polling frequencies without human intervention.\n\nThe platform also performs deep-scan response analysis by parsing raw HTML and JSON responses to identify subtle indicators of blocking or partial failures, ensuring that unavailable results truly represent plate scarcity rather than detection by security systems.\n\nOnce a target plate becomes available, an event-driven notification system immediately triggers SMS and email alerts, bypassing traditional processing queues to deliver near-instant notifications. This architecture ensures users can act before competitors in an environment where seconds determine success.\n\nBy combining intelligent automation, stealth architecture, adaptive decision systems, and real-time notifications, MyPlate Sentinel transforms a tedious manual process into a seamless, automated experience, delivering high reliability, rapid detection speeds, and continuous monitoring without user intervention.",
+  tags: [
+    { name: "AI Agent", color: "blue-text-gradient" },
+    { name: "Automation", color: "green-text-gradient" },
+    { name: "Web Scraping", color: "pink-text-gradient" },
+    { name: "Distributed Systems", color: "green-text-gradient" },
+  ],
+  image: [myplate1, myplate2, myplate3],
+  source_code_link: "none",
+  },
+  {
     name: "AQUSys Intelligence",
     video: aqussysVid,
     descriptionDetail:
@@ -152,7 +232,6 @@ export const projects = [
     tags: [
       { name: "Graph RAG", color: "blue-text-gradient" },
       { name: "Deep Learning", color: "green-text-gradient" },
-      { name: "", color: "pink-text-gradient" },
     ],
     image: [raggif, rag1, rag2, rag3],
     source_code_link:  "https://github.com/Qaisar-Mateen/RAGenius",
